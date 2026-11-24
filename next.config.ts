@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',  // AWS: export static HTML/JS/CSS files
+  images: {
+    unoptimized: true  // Required for static export
+  },
+  // Kept from the original project: this is how Tailwind CSS gets compiled
   turbopack: {
     rules: {
       "*.css": {
